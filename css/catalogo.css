@@ -24,22 +24,38 @@ header .left-side a img{
 }
 header .right-side{
     display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    
+    
 }
 
 header .right-side .nav-link-wrapper a{
     padding: 10px;
     margin: 10px;
     text-decoration:solid;
-    color: white;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     margin-right: 30px;
     font-style:normal;
+    color: white;
+
 }
+
+header .right-side .nav-link-wrapper a:hover {
+    transition: background, color;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+
 :root {
     --yellow: #ecb000;
-    --purple: #3a1a54;
+    --purple:  #4f3030f4;
     --gray: #ededed;
 }
 
@@ -122,12 +138,14 @@ section .catalog {
 }
 
 section .title-wrapper-catalog {
-    margin-top: 0px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 section .filter-card {
     width: 980px;
-    height: 150px;
+    height: 100px;
     background: var(--gray);
     border-radius: 8px;
     margin: 0 auto;
