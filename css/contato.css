@@ -53,164 +53,200 @@ header .right-side .nav-link-wrapper a:hover {
 }
 
 body {
+    background: linear-gradient(75deg, black, white);
+    font-family: sans-serif;
+  }
+  .contact-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-40%);
     width: 100%;
-    overflow-x: hidden;
-    align-items: center;
-    justify-content: center;
-}
-
-.container{
-    max-width: 100%;
-    margin: 50px auto;
-    display: block;
-}
-
-.topside {
-    align-items: center;
-    align-self: center;
+  }
+  .flip-card {
+    border-radius: 0.5em;
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    width: 5em;
+    padding: 0.5em;
+    border: 0.1em solid #fff;
+    color: #fff;
     text-align: center;
-}
-
-.contact {
-    margin: 20px;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: block;
-}
-
-.name {
-    width: 800px;
-    height: 100px;
-    background: #ededed;
-    margin: 15px auto;
-    display: flex;
-    border: 1px solid black;
-    border-radius: 8px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.name .title {
-    margin-left: 10px;
-}
-
-.name .name-input {
-    width: 700px;
-    height: 50px;
-    margin-left: 5px;
-    border: 1px solid black;
-    border-radius: 4px 0px 0px 4px;
-    text-indent: 10px;
-    font-size: 18px;
- 
-}
-
-.tel {
-    width: 800px;
-    height: 100px;
-    background: #ededed;
-    margin: 15px auto;
-    border: 1px solid black;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif; 
-}
-
-.tel .title {
-    margin-left: 10px;
-}
-
-.tel .tel-input {
-    width: 400px;
-    height: 50px;
-    margin-left: 5px;
-    border: 1px solid black;
-    border-radius: 4px 0px 0px 4px;
-    text-indent: 10px;
-    font-size: 18px;
- 
-}
-
-.email {
-
-    width: 800px;
-    height: 100px;
-    background: #ededed;
-    margin: 15px auto;
-    border: 1px solid black;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif; 
-}
-
-.email .title {
-    margin-left: 10px;
-}
-
-.email .email-input {
-    width: 500px;
-    height: 50px;
-    margin-left: 5px;
-    border: 1px solid black;
-    border-radius: 4px 0px 0px 4px;
-    text-indent: 10px;
-    font-size: 18px;
-}
-
-.description {
-    width: 800px;
-    height: 250px;
-    background: #ededed;
-    margin: 15px auto;
-    border: 1px solid black;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-    justify-content: center;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif; 
-}
-
-
-.description .description-input {
-    width: 780px;
-    height: 220px;
-    margin-left: 5px;
-    border: 1px solid black;
-    border-radius: 4px 0px 0px 4px;
-    text-indent: 10px;
-    font-size: 18px;
- 
-}
-
-.send-button {
-    width: 200px;
-    height: 70px;
-    border-radius: 8px;
-    border: none;
-    background: black;
-    color: white;
     cursor: pointer;
-    font-size: 1.1em;
-    transition: 0.2s ease;
-
-}
-
-.send-button:hover {
+    z-index: 9;
+  }
+  .envelope {
+    position: relative;
+    display: block;
+    width: 30em;
+    height: 35em;
+    margin: 0 auto;
+  }
+  .envelope.active .content {
+    padding: 15em 2em 2em;
+  }
+  .envelope.active .paper.front,
+  .envelope.active .paper.back {
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  .envelope.active .paper.front {
+    animation-name: envelope-front;
+  }
+  .envelope.active .paper.back {
+    animation-name: envelope-back;
+  }
+  .envelope.active .paper.back:before {
+    animation-duration: 0.5s;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1.25s;
+    animation-name: envelope-back-before;
+  }
+  .envelope.active .bottom-wrapper {
+    transform: rotateX(180deg);
+  }
+  .envelope.active .bottom-wrapper:after {
+    z-index: 0;
+    opacity: 1;
+  }
+  .envelope .content {
+    padding: 2em;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 9;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 1s;
+  }
+  .envelope .top-wrapper,
+  .envelope .bottom-wrapper {
+    box-sizing: border-box;
     background: #ededed;
     color: black;
-}
+  }
+  .envelope .top-wrapper {
+    padding: 2em 2em 0;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+  }
+  .envelope .bottom-wrapper {
+    padding: 0 2em 2em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    transition: all 0.5s ease-in-out;
+    transform-origin: top;
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+    margin-top: -1px;
+  }
+  .envelope .bottom-wrapper:after {
+    position: absolute;
+    content: '';
+    display: block;
+    opacity: 0;
+    background: #ededed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .envelope form label {
+    display: block;
+    padding-bottom: 0.5em;
+  }
+  .envelope form input,
+  .envelope form textarea {
+    width: 100%;
+    box-shadow: 0;
+    background: transparent;
+    color: black;
+  }
+  .envelope form input {
+    border-width: 0 0 0.1em;
+    border-color: black;
+    border-style: solid;
+  }
+  .envelope form textarea {
+    border: 0.1em solid black;
+    border-radius: 0.25em;
+  }
+  .envelope form .submit-card {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 0.5em;
+    box-sizing: border-box;
+    background: black;
+    width: 100%;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+  }
+
+  .envelope form .submit-card:hover{
+    background: #dedede;
+    color: black;
+  }
+  .envelope form .input {
+    padding-bottom: 1em;
+  }
+  .envelope .paper {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    overflow: hidden;
+  }
+  .envelope .paper.back {
+    top: 0;
+  }
+  .envelope .paper.back:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: -1px;
+    border-style: solid;
+    border-width: 0 15em 10em 15em;
+    border-color: transparent transparent #d3d3d3 transparent;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    z-index: 0;
+  }
+  .envelope .paper.back:after {
+    content: '';
+    display: block;
+    background-color: #d3d3d3;
+    width: 30em;
+    height: 20em;
+  }
+  .envelope .paper.front {
+    top: 10em;
+    box-shadow: 0.1em 0.5em 0.5em rgba(0,0,0,0.25);
+    z-index: 0;
+  }
+  .envelope .paper.front:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10em 15em 0 15em;
+    border-color: transparent #fff;
+  }
+  .envelope .paper.front:after {
+    content: '';
+    display: block;
+    width: 30em;
+    height: 10em;
+    background: #fff;
+    margin-top: -1px;
+  }
