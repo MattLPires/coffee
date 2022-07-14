@@ -165,15 +165,18 @@ body {
     box-shadow: 0;
     background: transparent;
     color: black;
+    font-size: 16px;
   }
   .envelope form input {
     border-width: 0 0 0.1em;
     border-color: black;
     border-style: solid;
+    font-size: 16px;
   }
   .envelope form textarea {
     border: 0.1em solid black;
     border-radius: 0.25em;
+    font-size: 16px;
   }
   .envelope form .submit-card {
     background: black;
@@ -195,6 +198,7 @@ body {
   }
   .envelope form .input {
     padding-bottom: 1em;
+    font-size: 16px;
   }
   .envelope .paper {
     position: absolute;
