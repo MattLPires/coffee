@@ -57,6 +57,11 @@ header .right-side .nav-link-wrapper a:hover {
     margin: 50px auto;
 }
 
+.sliderImg {
+    width: 70%;
+    border-radius: 70px;
+}
+
 .container .left-side {
     text-align: center;
 }
@@ -95,6 +100,7 @@ header .right-side .nav-link-wrapper a:hover {
 
 .container .right-side img{
     max-width: 60%;
+    border-radius: 70px;
 }
 
 .container .right-side .box {
